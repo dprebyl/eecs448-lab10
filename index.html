@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html class="h-100">
+	<head>
+		<meta charset="utf-8">
+		<title>EECS 448 Lab 10</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!--Bootstrap styles-->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	</head>
+	<body class="h-100 d-flex flex-column">
+		<nav class="navbar navbar-expand navbar-dark bg-dark border-bottom" style="flex-shrink: none">
+			<a class="navbar-brand" href="index.html">EECS 448 Lab 10</a>
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="CreateUser.html">2: CreateUser</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="CreatePosts.html">3: CreatePosts</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="AdminHome.html">4-7: Admin</a>
+				</li>
+			</ul>
+		</nav>
+		<div class="container" style="flex: 1 0 auto">
+			<h1 class="mt-3">EECS 448 Lab 10 (MySQL)</h1>
+			Exercise 1 SQL provided below. Exercises 2-7 accessible via the navbar above.
+	<code><pre>
+CREATE TABLE Users ( 
+	user_id varchar(255) NOT NULL, 
+	PRIMARY KEY (user_id) 
+);
+
+CREATE TABLE Posts ( 
+	post_id int NOT NULL AUTO_INCREMENT, 
+	content text, 
+	author_id varchar(255) NOT NULL, 
+	PRIMARY KEY (post_id), 
+	FOREIGN KEY (author_id) REFERENCES Users(user_id) 
+); </pre></code>
+		</div>
+		<footer class="mt-2 py-2 border-top text-center" style="flex-shrink: none">
+			&copy; 2020 Drake Prebyl
+		</footer>
+	</body>
+</html>
